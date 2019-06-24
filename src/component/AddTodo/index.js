@@ -22,6 +22,9 @@ class AddTodo extends React.Component {
         await axios.post("http://localhost:4000/addTodo", {
             name: todoName
         }).then((res) => {
+            this.setState({
+                todoName: ""
+            })
             console.log(res);
 
            axios.get("http://localhost:4000/todoArr").then((res) => {
